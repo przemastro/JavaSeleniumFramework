@@ -118,7 +118,7 @@ CREATE TABLE `builds` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`testplan_id`,`name`),
   KEY `testplan_id` (`testplan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2550 DEFAULT CHARSET=utf8 COMMENT='Available builds';
+) ENGINE=InnoDB AUTO_INCREMENT=2552 DEFAULT CHARSET=utf8 COMMENT='Available builds';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,7 +127,7 @@ CREATE TABLE `builds` (
 
 LOCK TABLES `builds` WRITE;
 /*!40000 ALTER TABLE `builds` DISABLE KEYS */;
-INSERT INTO `builds` VALUES (2549,5,'Build 31-05-2016 15:42:52',NULL,1,1,NULL,'2016-05-31 13:42:53','2016-05-31',NULL);
+INSERT INTO `builds` VALUES (2549,5,'Build 31-05-2016 15:42:52',NULL,1,1,NULL,'2016-05-31 13:42:53','2016-05-31',NULL),(2550,5,'Build 31-05-2016 15:56:03',NULL,1,1,NULL,'2016-05-31 13:56:04','2016-05-31',NULL),(2551,5,'Build 31-05-2016 16:00:41',NULL,1,1,NULL,'2016-05-31 14:00:42','2016-05-31',NULL);
 /*!40000 ALTER TABLE `builds` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -457,7 +457,7 @@ CREATE TABLE `executions` (
   PRIMARY KEY (`id`),
   KEY `executions_idx1` (`testplan_id`,`tcversion_id`,`platform_id`,`build_id`),
   KEY `executions_idx2` (`execution_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=14508 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14510 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -466,7 +466,7 @@ CREATE TABLE `executions` (
 
 LOCK TABLES `executions` WRITE;
 /*!40000 ALTER TABLE `executions` DISABLE KEYS */;
-INSERT INTO `executions` VALUES (14507,2549,1,'2016-05-31 15:43:18','p',5,716,1,0,1,21.95,'No significant error has been found\n');
+INSERT INTO `executions` VALUES (14507,2549,1,'2016-05-31 15:43:18','p',5,716,1,0,1,21.95,'No significant error has been found\n'),(14508,2550,1,'2016-05-31 15:56:29','p',5,716,1,0,1,21.98,'No significant error has been found\n'),(14509,2551,1,'2016-05-31 16:01:07','p',5,716,1,0,1,22.00,'No significant error has been found\n');
 /*!40000 ALTER TABLE `executions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1280,7 +1280,7 @@ CREATE TABLE `testplan_tcversions` (
 
 LOCK TABLES `testplan_tcversions` WRITE;
 /*!40000 ALTER TABLE `testplan_tcversions` DISABLE KEYS */;
-INSERT INTO `testplan_tcversions` VALUES (13,5,716,0,2,0,1,'2016-05-31 13:43:18');
+INSERT INTO `testplan_tcversions` VALUES (13,5,716,0,2,0,1,'2016-05-31 14:01:07');
 /*!40000 ALTER TABLE `testplan_tcversions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1396,7 +1396,7 @@ CREATE TABLE `testprojects` (
 
 LOCK TABLES `testprojects` WRITE;
 /*!40000 ALTER TABLE `testprojects` DISABLE KEYS */;
-INSERT INTO `testprojects` VALUES (1,'','',1,0,0,0,'O:8:\"stdClass\":4:{s:19:\"requirementsEnabled\";i:1;s:19:\"testPriorityEnabled\";i:1;s:17:\"automationEnabled\";i:1;s:16:\"inventoryEnabled\";i:1;}','RCV',35,1,0,0,'654ad60ebd1ae29cedc37da04b6b06728d3215ae97598264ad6529613774a038');
+INSERT INTO `testprojects` VALUES (1,'','',1,0,0,0,'O:8:\"stdClass\":4:{s:19:\"requirementsEnabled\";i:1;s:19:\"testPriorityEnabled\";i:1;s:17:\"automationEnabled\";i:1;s:16:\"inventoryEnabled\";i:1;}','testApp',35,1,0,0,'654ad60ebd1ae29cedc37da04b6b06728d3215ae97598264ad6529613774a038');
 /*!40000 ALTER TABLE `testprojects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1743,4 +1743,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-05-31 15:55:50
+-- Dump completed on 2016-05-31 16:44:05
