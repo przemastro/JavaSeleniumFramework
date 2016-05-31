@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Rule-CV Suite" verbose="1">
+    <listeners>
+        <listener class-name="com.testing.Reporter"/>
+    </listeners>
+
+    <test name="Daily Run" preserve-order="true">
+        <classes>
+            <class name="com.testing.Tests.RestForm"/>
+            <methods>
+                <include name="addNewEmployee"/>
+            </methods>
+        </classes>
+    </test>
+</suite>
