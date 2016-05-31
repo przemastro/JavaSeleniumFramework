@@ -1,0 +1,21 @@
+Few steps need to be performed in order to use testlink with selenium:
+
+1. Download and Install XAMPP (Can be replaced by standalone installation of Apache, PHP, MySql)
+2. Download latest Testlink http://testlink.org/ and Extract to xampp\htdocs. I use testlink-1.9.14.
+3. On windows correct linux based paths: $g_repositoryPath and $tlCfg->log_path in config.inc.php
+4. Install TestLink locally (localhost/testlink/install) and create TestLink DB schema during installation
+   with admin/admin credentials. I used everywhere login 'admin' with password 'admin', so I did not worry
+   about authentication.
+5. Import TestLink dump (mysql -u username -p database_name < file.sql), or simply run DB.sql query under testlink
+   schema connection. You might need to change connection credential from standard root to admin/admin
+6. Login @ localhost/testlink and see what shchema version testlink expects. I use 1.9.14. It is possible that you
+   will use other version so update row in db_version table.
+7. Run SQL query: grant all privileges on testlink.* to admin@localhost identified by 'admin';
+   so selenium tests can run properly
+8. In pom.xml set <suiteXmlFile> to proper xml file withs tests depending on what test suite you want to run
+
+
+And last but not least please remember about using selenium, testng, chromedriver and Chrome binary compatible versions.
+
+After tests are executed please navigate to http://localhost/testlink/index.php. Login and then go to 'Execute Tests' under
+'Test Execution' and see tests results from last build
