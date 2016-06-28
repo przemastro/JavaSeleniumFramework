@@ -19,7 +19,7 @@ public abstract class MainPage {
 
     public static final int DEFAULT_WAIT_FOR_PAGE_LOAD = 5;
     public static final int DEFAULT_WAIT_FOR_AJAX_LOAD = 5;
-    public static final int DEFAULT_WAIT_FOR_SCRIPT_MS = 8000;
+    public static final int DEFAULT_WAIT_FOR_SCRIPT_MS = 3000;
     protected final WebDriver driver;
     private String methodName;
 

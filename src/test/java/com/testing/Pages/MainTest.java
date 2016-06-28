@@ -31,6 +31,7 @@ public class MainTest {
 
     protected FirefoxProfile firefoxProfile;
     private String path;
+    public String pathResources;
 
     public String dateValue;
     public String nameBuild;
@@ -63,6 +64,8 @@ public class MainTest {
 
         chromeDriver = prop.getProperty("functional-automated-tests.ChromeDriverPath");
         chromeBinary = prop.getProperty("functional-automated-tests.ChromeBinaryPath", "C:\\\\Program Files (x86)\\\\Google\\\\Chrome\\\\Application\\chrome.exe");
+        pathResources = prop.getProperty("mainTest.pathResources");
+        System.out.println(pathResources);
     }
 
     @BeforeMethod(alwaysRun = true)
@@ -94,7 +97,7 @@ public class MainTest {
         driver.quit();
     }
 
-    @BeforeSuite(enabled = true)
+    //@BeforeSuite(enabled = true)
     public void startFile() {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         dateValue = dateFormat.format(date);

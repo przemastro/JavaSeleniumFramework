@@ -7,9 +7,12 @@
 
     <test name="Daily Run" preserve-order="true">
         <classes>
-            <class name="com.testing.Tests.RestForm"/>
+            <class name="com.testing.Tests.Observations"/>
             <methods>
-                <include name="addNewEmployee"/>
+                <include name="addNewObservation"/>
+                <include name="editUVBData"/>
+                <include name="editObservation"/>
+                <include name="removeObservation"/>
             </methods>
         </classes>
     </test>
